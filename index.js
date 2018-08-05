@@ -1,10 +1,9 @@
+//set up the conditions
 let noOfDoors = 3;
-let iterations = 999999;
+let iterations = 999;
 let contestantSwitches = true;
 
 let matches = 0;
-let wins = 0;
-let loses = 0;
 
 for (let i = 0 ; i < iterations ; i++){//each game
     let carHiddenBehind = Math.ceil(Math.random() * noOfDoors);
@@ -15,16 +14,19 @@ for (let i = 0 ; i < iterations ; i++){//each game
         for (let j = 0 ; j < noOfDoors ; j ++){
             doors.push('Goat');
         };
+        //assigning the winning car to one of the doors
         doors[carHiddenBehind-1] = 'Car';
-        
         // the game stage is set
-        
+        console.log(`contestant has chosen ${contestantPicked}`)
+        //show the original set up
         console.log(doors);
         console.log('the host opens a door to show a goat')
+        //the host now reveals a goat
         doors[hostRevealsAGoat(doors, 'Goat', contestantPicked)] = 'Revealed Goat';
+        // show the set up now with one goat revealed
         console.log(doors);
 
-        console.log(`contestant has chosen ${contestantPicked}`)
+
     
         if (contestantSwitches === true){
 
@@ -32,8 +34,7 @@ for (let i = 0 ; i < iterations ; i++){//each game
                 contestantPicked = (doors.indexOf('Goat'))+1;
             }else if (doors[contestantPicked-1]=== 'Goat'){
                 contestantPicked = (doors.indexOf('Car'))+1;
-                // console.log('goatgoat');
-                // console.log(contestantPicked);
+     
             }
 
             if (contestantPicked === carHiddenBehind){matches ++};
@@ -45,7 +46,7 @@ for (let i = 0 ; i < iterations ; i++){//each game
 
 console.log(`matches = ${matches}`);
 console.log(`iterations = ${iterations}`);
-console.log(matches/iterations);
+console.log(`The car was won in ${(matches/iterations)*100}% of games based on the above conditions`);
 
 function hostRevealsAGoat(arr, item, contestantPicked){
     indexes = [];
