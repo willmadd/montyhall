@@ -1,0 +1,23 @@
+{
+  "name": "montyhallsimulation",
+  "version": "1.0.0",
+  "description": "a simulation for the Monty Hall Mathmatical Problem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willmadd/montyhall.git"
+  },
+  "keywords": [
+    "MontyHall",
+    "Maths"
+  ],
+  "author": "William Maddicott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willmadd/montyhall/issues"
+  },
+  "homepage": "https://github.com/willmadd/montyhall#readme"
+}
